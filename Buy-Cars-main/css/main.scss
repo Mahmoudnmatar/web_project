@@ -1,0 +1,249 @@
+$background: #222f3e;
+$mainColor: #8395a7;
+$secoundColor: #f1c40f;
+
+/* general style */
+
+body {
+  background-color: $background;
+}
+
+html,
+body {
+  scroll-padding-top: 80px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Cairo", sans-serif;
+  font-size: 18px;
+}
+
+li {
+  list-style: none;
+  color: #222;
+}
+
+a {
+  text-decoration: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* header */
+header {
+  background-image: url("../media/background_PC.jpg");
+  height: calc(100vh - 60px);
+  background-size: cover;
+  background-position: 50% 45%;
+  position: relative;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(transparent 50%, $mainColor);
+  }
+
+  h1 {
+    padding-top: calc(155px / 2);
+    font-size: 155px;
+    text-transform: capitalize;
+    text-shadow: #000 0px 0px 50px;
+  }
+}
+
+/* nav */
+nav {
+  background-color: $mainColor;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  ul {
+    margin-left: calc(10% - 50px);
+    li {
+      display: inline-block;
+      margin-left: 50px;
+      line-height: 60px;
+      font-weight: 500;
+      a {
+        color: #fff;
+      }
+    }
+  }
+}
+
+/* section 1 */
+.section1 {
+  width: 80%;
+  margin: 70px auto;
+  line-height: 2em;
+  p {
+    color: white;
+    text-align: center;
+    span a {
+      color: $secoundColor;
+    }
+  }
+}
+
+/* section 2 */
+.container {
+  position: relative;
+  width: 80%;
+  margin: 70px auto;
+  color: white;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  align-items: center;
+  h2 {
+    @extend %containers;
+  }
+
+  li {
+    color: white;
+    line-height: 1.8em;
+    span {
+      color: $secoundColor;
+      margin-right: 15px;
+    }
+  }
+}
+
+.underline::after {
+  content: "";
+  height: 1px;
+  width: 90%;
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  background-color: $secoundColor;
+}
+
+.right span {
+  position: relative;
+  color: $secoundColor;
+  font-weight: 600;
+  font-size: 32px;
+  top: calc(-50px + 32px / 2);
+}
+
+/* section certificate */
+
+.certificateContainer {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  color: white;
+  margin-top: 120px;
+  line-height: 1.8em;
+  position: relative;
+  a {
+    color: $secoundColor;
+  }
+
+  h2 {
+    @extend %containers;
+  }
+
+  .certificateGrid {
+    margin: 50px 0px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+}
+
+.certificate {
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+  @include gray(75%);
+  &:hover {
+    @include scale(1.5);
+    @include gray(0%);
+  }
+}
+
+/* Start last section */
+.container2 {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 120px;
+  line-height: 1.8em;
+
+  h2 {
+    @extend %containers;
+  }
+}
+
+.btn {
+  display: inline-block;
+  margin: 10px auto;
+  color: white;
+  border: 2px solid $secoundColor;
+  padding: 7px 20px;
+  text-transform: capitalize;
+  letter-spacing: 1.2px;
+  font-weight: 400;
+  border-radius: 7px;
+  transition: background-color 0.3s ease-in-out;
+  &:hover {
+    background-color: $secoundColor;
+  }
+}
+
+/* footer */
+footer {
+  background-color: #222;
+  .footer {
+    width: 80%;
+    margin: 70px auto 0px;
+    line-height: 50px;
+    color: white;
+    font-size: 16px;
+    .red {
+      color: #dd2e44;
+    }
+  }
+}
+
+// Extended class
+%containers {
+  grid-column: 1/2 span;
+  color: $secoundColor;
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+// media import
+@import "./media.scss";
+
+// functions
+@mixin scale($r){
+    -webkit-transform: scale($r);
+    -o-transform: scale($r);
+    -moz-transform: scale($r);
+    -ms-transform: scale($r);
+    transform: scale($r);
+}
+
+@mixin gray($r){
+    -webkit-filter: grayscale($r);
+    -o-filter: scale($r);
+    -moz-filter: scale($r);
+    -ms-filter: scale($r);
+    filter: scale($r);
+}

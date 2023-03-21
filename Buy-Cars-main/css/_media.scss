@@ -1,0 +1,71 @@
+/* Mobile and tableat */
+@media (max-width: 767px) {
+  * {
+    font-size: 16px;
+  }
+
+  header h1 {
+    font-size: 100px;
+    align-self: flex-end;
+    margin: 0px 15px 30px;
+    line-height: 0.8em;
+  }
+
+  nav ul {
+    margin-left: 0px;
+    li {
+      margin-left: 30px;
+    }
+  }
+
+  .container {
+    display: block;
+    h2 {
+      margin-bottom: 15px;
+      font-size: 28px;
+    }
+
+    li {
+      font-size: 16px;
+      line-height: 1.5em;
+    }
+  }
+
+  .right {
+    margin-top: 50px;
+  }
+
+  .certificateContainer h2,
+  .container2 h2 {
+    margin-bottom: 15px;
+    font-size: 28px;
+  }
+
+  .underline::after {
+    bottom: -20px;
+  }
+
+  .certificateGrid {
+    grid-template-columns: 100% !important;
+    grid-row-gap: 15px;
+  }
+
+  .footer {
+    width: 90%;
+    p {
+      font-size: 12px;
+    }
+  }
+}
+
+/* Small screens, laptops */
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+/* mediaum secreen */
+@media (min-width: 992px) and( max-width:1199px) {
+}
+
+/* larg secreen */
+@media (min-width: 1200px) {
+}
